@@ -23,7 +23,7 @@ int main(int argc, char* args[]) {
 			printf("IMG_Init: %s\n", IMG_GetError());
 			// handle error
 		}
-		 myapp = new sdl_app(SCREEN_WIDTH, SCREEN_HEIGHT, false);
+		 myapp = new sdl_app(SCREEN_WIDTH, SCREEN_HEIGHT);
 	} catch (std::string errorS) {
 		std::cout << errorS << std::endl;
 

@@ -5,15 +5,15 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
+#include "Weapon.h"
 
 class player: public Entity {
 	public: 
-		player(SDL_Texture* image);
+		player(std::vector<ReadableTexture*>* playerImages, SDL_Point playerImgSize, int scale, Weapon* weapon);
 		bool onGround = false;
 		void update();
-		SDL_Rect entityScreenRect, entityImageClip;
-		int curFrame;
-		SDL_Texture* getCurrentPlayerImage();
+		Weapon* getCurWeapon();
+		SDL_RendererFlip flip = SDL_FLIP_NONE;
 	protected:
-		SDL_Texture* entityImage;
+		Weapon* curWeapon;
 };
